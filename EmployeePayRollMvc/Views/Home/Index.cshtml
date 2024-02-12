@@ -1,0 +1,32 @@
+﻿@model CommonLayer.Models.Employee
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+@* @TempData["Name"]
+<div>
+<ul>
+    @{
+        foreach (var Courses in ViewBag.Courses)
+        {
+            <li> @Courses</li>
+        }
+    }
+</ul>
+
+    <ul>
+        @{
+            foreach (var Courses in (List<CommonLayer.Models.Employee>)ViewData["students"])
+            {
+                <li> @Courses.Name</li>
+            }
+        }
+    </ul>
+</div> *@
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+

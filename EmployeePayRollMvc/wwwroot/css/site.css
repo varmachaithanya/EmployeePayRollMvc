@@ -1,0 +1,44 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+/*.row {
+    height: 650px;
+    width: 1123px;
+    border: 2px solid red;
+    display: flex;
+    justify-content: space-evenly;*/
+    /*    background-color:antiquewhite;
+*/
+/*}*/
+#main-form-row {
+    height: 570px;
+    width: 1123px;
+/*    border: 2px solid red;
+*/    display: flex;
+    justify-content:center;
+}
+
+.main-form-row {
+}
+
+
+
+/*.row {
+    display: flex;
+    align-items: center;
+}*/

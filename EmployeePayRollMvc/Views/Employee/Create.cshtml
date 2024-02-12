@@ -1,0 +1,98 @@
+﻿@model CommonLayer.Models.EmployeeModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@* <center><h3 style="color:blue"><b>Add Employee Payroll UI/UX Design</b></h3></center>
+ *@
+ <br />
+<h3 style="color:blue"><center><b>@ViewBag.data</b></center></h3>
+<div class="row" >
+    <div class="col-md-4" id="main-form-row">
+        <form asp-action="Create" class="form-body-for-creation">
+            <br />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div>
+                <h4>Employee Payroll Form</h4></center>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                @Html.TextBoxFor(m => m.Name, new { @class = "custom-textbox" })<br />
+                 <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-image">
+                <label asp-for="ProfileImage" class="control-label"></label>
+                    @Html.RadioButtonFor(empModel => empModel.ProfileImage, Url.Content("~/Assets/profile1.png"))
+                    <img class="profileImg" , src="~/Assets/profile1.png" />
+                
+                    @Html.RadioButtonFor(empModel => empModel.ProfileImage, Url.Content("~/Assets/profile2.png"))
+                    <img class="profileImg" , src="~/Assets/profile2.png" />
+                
+                    @Html.RadioButtonFor(empModel => empModel.ProfileImage, Url.Content("~/Assets/profile3.png"))
+                    <img class="profileImg" , src="~/Assets/profile3.png" />
+             
+                
+                    @Html.RadioButtonFor(empModel => empModel.ProfileImage, Url.Content("~/Assets/profile4.png"))
+                <img class="profileImg" , src="~/Assets/profile4.png" /><br />
+                    <span asp-validation-for="ProfileImage" class="text-danger"></span>
+
+                </div>
+            <div>
+                <label asp-for="Gender" class="control-label"></label>
+
+                Male
+                @Html.RadioButtonFor(model => model.Gender, "Male")
+                Female
+                @Html.RadioButtonFor(model => model.Gender, "Female")
+                <br />
+                <span asp-validation-for="Gender" class="text-danger" ></span>
+
+            </div>
+            <div>
+                <label asp-for="Department" class="control-label"></label>
+                @Html.DropDownList("Department", new List<SelectListItem>
+                {
+                new SelectListItem { Text = "Devloper"},
+                new SelectListItem { Text = "Analyst"},
+                new SelectListItem { Text = "IT"},
+                new SelectListItem { Text = "HR"},
+                new SelectListItem { Text = "Sales"}
+                }, "Select Department", new { @class = "custom-textbox" })
+                <br />
+                <span asp-validation-for="Department" class="text-danger"></span>
+
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Salary" class="control-label"></label>
+                @Html.TextBoxFor(m => m.Salary, new { @class = "custom-textbox" })<br />
+                <span asp-validation-for="Salary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate" class="custom-textbox" /><br />
+
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Notes" class="control-label"></label>
+                @Html.TextBoxFor(m => m.Notes, new { @class = "custom-textbox" })<br />
+                <span asp-validation-for="Notes" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a asp-action="Details">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

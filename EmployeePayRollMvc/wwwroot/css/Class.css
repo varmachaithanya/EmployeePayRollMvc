@@ -1,0 +1,36 @@
+﻿
+
+img {
+    border-radius: 50%;
+}
+
+.form-body-for-creation{
+    width: 550px;
+    margin-left: 120px auto;
+    padding: 0px 20px 0px 30px;
+    border:2px solid black;
+    background-color:antiquewhite;
+}
+.custom-textbox {
+    height: 35px;
+    width: 350px;
+}
+.control-label{
+    width:120px;
+}
+
+.text-danger{
+    margin-left:125px;
+    font-size:x-small;
+}
+
+#to-come-below{
+    position:absolute;
+    transform:translateY(35px);
+    
+}
+#to-come-below-gender {
+    position: absolute;
+    transform: translateY(26px);
+}
+
